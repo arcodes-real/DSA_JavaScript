@@ -150,3 +150,4 @@ console.log(array.slice(1));
         }
         sumOfThreeElements(1,2,3).then(result => console.log(result)).catch((err) => console.error(err));
 
+// updated
