@@ -1,8 +1,53 @@
-// //String Anagram
-// //'hello' -> 'llheo'
+// String Anagram
+// 'hello' -> 'llheo'
 
-// //Anagram conditions
-// //length check (for both strings)
+// Anagram conditions
+// first -> length check (for both strings)
+// second -> calculate frequency of letter of first string
+// third ->  decrement the value of each item by 1
+
+function isAnagram(string1, string2){
+    if(string1.length !== string2.length){
+        return false;
+    }
+
+    // count frequency of letter of string1
+
+    let counter ={};
+    for(let letter of string1){
+        counter[letter] = (counter[letter] || 0) + 1;
+        console.log(counter);
+    }
+    for(let items of string2){
+        if(!counter[items]){
+            return false;
+        }
+        console.log(counter[items])
+        counter[items] -= 1;
+        console.log("break")
+        console.log(counter[items]);
+        
+    }
+    return true;
+}
+const check = isAnagram("hello","lelho");
+console.log(check);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
