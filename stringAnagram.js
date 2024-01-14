@@ -30,12 +30,46 @@ function isAnagram(string1, string2){
     }
     return true;
 }
-const check = isAnagram("hello","lelho");
+const check = isAnagram("hello","lllho");
 console.log(check);
 
 
 
+// reversed String
 
+function reversedString(str){
+    let reversedString = "";
+    for (let i = str.length - 1; i>=0; i--){
+        reversedString += str[i];
+    }
+    return reversedString;
+}
+console.log(reversedString("Archis"));
+
+// swapping letter
+// lowerCase to upperCase and vice versa
+
+let swappingCases = "eLZERo";
+
+let sw = swappingCases.split("").map((item) =>{
+    return item === item.toUpperCase()? item.toLowerCase() : item.toUpperCase();
+}).join("");
+console.log(sw);
+
+// two sum
+
+function twoSum(numArray, target){
+    for(let j = 0; j<numArray.length; j++){
+        for(let i = j+1; i<numArray.length; i++){
+            if(numArray[j] + numArray[i] === target){
+                return [j,i];
+            }
+        }
+
+    }
+}
+const result = twoSum([2,5,5,10], 10);
+console.log(result);
 
 
 

@@ -445,3 +445,20 @@ Object.defineProperties(user1,
     user1.name = "Datta";
     user1.adhar_number = 123;
     console.log(user1);
+
+
+// two sum
+// i/p -> numsArray = [2,5,5,10] ,target = 10
+// o/p -> [1,2] //return the index
+
+function twoSum(numsArray, target){
+    for(let j = 0; j<numsArray.length; j++){
+        for(let i = j+1; i<numsArray.length; i++){
+            if(numsArray[j] + numsArray[i] === target){
+                return [j, i];
+            }
+        }
+    }
+}
+const sumRes = twoSum([2,5,5,10], 10);
+console.log(sumRes);
