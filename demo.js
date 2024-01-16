@@ -462,3 +462,40 @@ function twoSum(numsArray, target){
 }
 const sumRes = twoSum([2,5,5,10], 10);
 console.log(sumRes);
+
+// You are given two non-empty arrays representing two non-negative integers. The digits are stored in 
+// reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as
+// a array.
+// Input: l1 = [2,4,3], l2 = [5,6,4]
+// Output: [7,0,8]
+// Explanation: 342 + 465 = 807.
+// Input: l1 = [0], l2 = [0]
+// Output: [0]
+// Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+// Output: [8,9,9,9,0,0,0,1]
+
+function addTwoNumbers(l1, l2){
+    let jl1 = l1.join("");
+    let rl1 = "";
+    for(let i = jl1.length-1; i>=0; i--){
+        rl1 += jl1[i];
+    }
+
+    let jl2 = l2.join("");
+    let rl2 = "";
+    for(let j = jl2.length-1; j>=0; j--){
+        rl2 += jl2[j];
+    }
+
+    let sum = parseInt(rl1) + parseInt(rl2);
+    let sumStr = String(sum);
+    let rSumStr = "";
+    for(let k = sumStr.length-1; k>=0; k--){
+        rSumStr += sumStr[k];
+    }
+    let arr = rSumStr.split("").map((ele)=>{
+        return Number(ele);
+    })
+    console.log(arr);
+}
+addTwoNumbers([2,4,3],[5,6,4]);
