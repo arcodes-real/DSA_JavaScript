@@ -498,4 +498,49 @@ function addTwoNumbers(l1, l2){
     })
     console.log(arr);
 }
-addTwoNumbers([2,4,3],[5,6,4]);
+addTwoNumbers([0],[0]);
+
+// palindrome number
+// 121 -> 121 [true]
+// 123321 -> 123321 [true]
+// -121 -> 121- [false]
+
+// without using pointers
+
+function palindrome(x){
+    let xToStr = x.toString();
+    let revX = "";
+    for (let i = xToStr.length-1; i>=0; i--){
+        revX += xToStr[i];
+    }
+    let revXtoNum = Number(revX);
+    if(revXtoNum === x){
+        return true;
+    }else{
+        return false;
+    }
+}
+let pRes = palindrome(121);
+console.log(pRes);
+
+// using pointers
+
+var isPalindrome = function(num){
+    let numToStr = num.toString();
+
+    let left = 0;
+    let right = numToStr.length - 1;
+
+    while(right > left){
+        if(numToStr.charAt(left) === numToStr.charAt(right)){
+            return true;
+            left++;
+            right--;
+        }else{
+            return false;
+        }
+    }
+}
+
+let Pres = isPalindrome(-121);
+console.log(Pres);
