@@ -544,3 +544,50 @@ var isPalindrome = function(num){
 
 let Pres = isPalindrome(-121);
 console.log(Pres);
+
+// Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to 
+// go outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0.
+
+// Example 1:
+
+// Input: x = 123
+// Output: 321
+// Example 2:
+
+// Input: x = -123
+// Output: -321
+// Example 3:
+
+// Input: x = 120
+// Output: 21
+
+function reverseDigit(num){
+    if(num < 0){
+        num *= -1;
+        let numToString = num.toString();
+        let revNum = "";
+        for(let i = numToString.length-1; i>=0; i--){
+            revNum += numToString[i];
+        }
+        let toNum = Number(revNum);
+        if(toNum >= Math.pow(-2,31) && toNum <= (Math.pow(2,31)-1)){
+            return (-1*toNum);
+        }else{
+            return 0;
+        }
+    }else{
+        let numToString = num.toString();
+        let revNum = "";
+        for(let i = numToString.length-1; i>=0; i--){
+            revNum += numToString[i];
+        }
+        let toNum = Number(revNum);
+        if(toNum >= Math.pow(-2,31) && toNum <= (Math.pow(2,31)-1)){
+            return toNum;
+        }else{
+            return 0;
+        }
+    }
+}
+const revRes = reverseDigit(-1230);
+console.log(revRes);
