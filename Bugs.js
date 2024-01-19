@@ -16,3 +16,4 @@ printUserAccess(user1);
 //BUG: scope 
 //Error: ReferenceError
 //Solution: either console in block scopes seperately or use var keyword
+

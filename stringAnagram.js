@@ -72,7 +72,38 @@ const result = twoSum([2,5,5,10], 10);
 console.log(result);
 
 
+// palindrome number 
+// 121 -> 121 // true
+// -121 -> 121- //false
 
+function palindrome(num){
+    let numToStr = num.toString();
+    let rev ="";
+    for(let i= numToStr.length-1; i>=0; i--){
+        rev += numToStr[i];
+    }
+    let revToNum = Number(rev);
+    if(revToNum === num){
+        return true;
+    }else{
+        return false;
+    }
+}
+const pRes = palindrome(-121);
+console.log(pRes);
+
+// Objects are reference type -> Non-primitive Data type
+
+let a = {};
+let b = {};
+console.log(a === b); // false
+console.log(a == b);  // false
+console.log(typeof(a) === typeof(b)); // true
+console.log(typeof(a) == typeof(b));  // true
+let x = {key:1};
+let y = {key:1};
+console.log(x.key === y.key); // true
+console.log(x.key == y.key); //true
 
 
 
