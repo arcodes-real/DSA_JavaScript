@@ -592,3 +592,11 @@ function reverseDigit(num){
 const revRes = reverseDigit(-1230);
 console.log(revRes);
 
+// maximum number in an array
+
+function findMax(arr){
+    let sortedArray = arr.sort();
+    let maxNum = sortedArray[sortedArray.length-1];
+    console.log(maxNum) ;
+}
+findMax([-1,-4,-3,-7,-2]);
