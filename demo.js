@@ -600,3 +600,22 @@ function findMax(arr){
     console.log(maxNum) ;
 }
 findMax([-1,-4,-3,-7,-2]);
+
+// merging two arrays
+// a1 = [1,2,4]; a2 = [1,3,4]
+// merged = [1,1,2,3,4,4];
+function mergeArrays(array1, array2){
+    let mergedArray = array1.concat(array2);
+    let mergedSortedArray = mergedArray.sort();
+    console.log(mergedSortedArray);
+}
+mergeArrays([1,2,4],[1,3,4]);
+
+// technique 2
+
+let arry1 = [1,2,4];
+let arry2 = [1,3,4];
+for(let i = 0; i<arry2.length; i++){
+    arry1.push(arry2[i]);
+}
+console.log(arry1.sort());
