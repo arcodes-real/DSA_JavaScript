@@ -595,18 +595,18 @@ console.log(revRes);
 // maximum number in an array
 
 function findMax(arr){
-    let sortedArray = arr.sort();
+    let sortedArray = arr.sort(function(a,b){return a-b});
     let maxNum = sortedArray[sortedArray.length-1];
     console.log(maxNum) ;
 }
-findMax([-1,-4,-3,-7,-2]);
+findMax([20, 10, 20, 4, 100]);
 
 // merging two arrays
 // a1 = [1,2,4]; a2 = [1,3,4]
 // merged = [1,1,2,3,4,4];
 function mergeArrays(array1, array2){
     let mergedArray = array1.concat(array2);
-    let mergedSortedArray = mergedArray.sort();
+    let mergedSortedArray = mergedArray.sort(function(a,b){return a-b});
     console.log(mergedSortedArray);
 }
 mergeArrays([1,2,4],[1,3,4]);
@@ -618,4 +618,4 @@ let arry2 = [1,3,4];
 for(let i = 0; i<arry2.length; i++){
     arry1.push(arry2[i]);
 }
-console.log(arry1.sort());
+console.log(arry1.sort(function(a,b){return a-b}));
