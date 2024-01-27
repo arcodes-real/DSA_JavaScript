@@ -34,3 +34,13 @@ if(bool2){
     console.log("Second Block");
 }
 
+// finding the maximum and minimum in a array
+
+function findMaxMin(arr){
+    let sortedArray = arr.sort(function(a,b){return a-b});
+    let maxNum = sortedArray[sortedArray.length - 1];
+    let minNum = sortedArray[0];
+    console.log(maxNum);
+    console.log(minNum);
+}
+findMaxMin([20,5,100,2]);

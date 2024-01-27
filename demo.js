@@ -619,3 +619,4 @@ for(let i = 0; i<arry2.length; i++){
     arry1.push(arry2[i]);
 }
 console.log(arry1.sort(function(a,b){return a-b}));
+
