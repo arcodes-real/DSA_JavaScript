@@ -22,7 +22,7 @@ class LinkedList{
     getSize(){
         return this.size;
     }
-
+    // time complexity -> O(1)
     prepend(value){
         const node =  new Node(value);
         // case if the list is already empty
@@ -38,13 +38,37 @@ class LinkedList{
         this.size++;
     }
 
+    // time complexity -> O(n)
     append(value){
         const node = new Node(value);
+        // console.log(node);
         if(this.isEmpty()){
             this.head = node;
         }else{
-            this.next = node;
-            node.next = null;
+            let curr = this.head;
+            curr.next = node;
+            while(curr.next){
+                curr = curr.next
+            }
+            
+        }
+        this.size++;
+    }
+
+    insert(value, index){
+        if(index < 0 || index > this.size){
+            return;
+        }
+        if(index === 0){
+            this.prepend(value);
+        }else{
+            const node = new Node(value);
+            let prev = this.head;
+            for(let i = 0; i<index-1; i++){
+                prev = prev.next;
+            }
+            node.next = prev.next;
+            prev.next = node;
         }
         this.size++;
     }
@@ -70,9 +94,16 @@ const list = new LinkedList();
 // list.prepend(10);
 // list.prepend(20);
 // list.prepend(30);
-list.append(40);
-list.append(50);
-list.append(60);
+// list.append(40);
+// list.append(50);
+// list.append(60);
+list.insert(40,0);
+list.insert(50,1);
+list.insert(60,2);
+list.insert(70,2);
+
+
+
 
 list.print();
 console.log(list.isEmpty());
