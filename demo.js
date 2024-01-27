@@ -532,7 +532,7 @@ var isPalindrome = function(num){
     let right = numToStr.length - 1;
 
     while(right > left){
-        if(numToStr.charAt(left) === numToStr.charAt(right)){
+        if(numToStr[left] === numToStr[right]){
             return true;
             left++;
             right--;
@@ -542,8 +542,8 @@ var isPalindrome = function(num){
     }
 }
 
-let Pres = isPalindrome(-121);
-console.log(Pres);
+let Pres = isPalindrome(121);
+console.log("Palindrom ",Pres);
 
 // Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to 
 // go outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0.

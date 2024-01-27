@@ -43,4 +43,16 @@ function findMaxMin(arr){
     console.log(maxNum);
     console.log(minNum);
 }
-findMaxMin([20,5,100,2]);
+findMaxMin([20,5,100,-2]);
+
+// converting an array of objects to a single object
+
+var array = [
+    { key: 'k1', value: 'v1' },
+    { key: 'k2', value: 'v2' },
+    { key: 'k3', value: 'v3' }
+];
+
+let mapped = array.map((item) => ({ [item.key] : item.value} ));
+let newObj = Object.assign({}, ...mapped);
+console.log(newObj);
