@@ -69,8 +69,9 @@ class LinkedList{
             }
             node.next = prev.next;
             prev.next = node;
+            this.size++;
         }
-        this.size++;
+        
     }
 
     removeFrom(index){
@@ -124,7 +125,7 @@ list.insert(60,2);
 list.insert(70,2);
 
 
-list.removeFrom(2);
+// list.removeFrom(2);
 
 list.print();
 console.log(list.isEmpty());
