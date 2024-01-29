@@ -56,3 +56,10 @@ var array = [
 let mapped = array.map((item) => ({ [item.key] : item.value} ));
 let newObj = Object.assign({}, ...mapped);
 console.log(newObj);
+
+// null vs undefined
+
+console.log(typeof null);
+console.log(typeof undefined);
+console.log(null === undefined);
+console.log(null == undefined); // true coz null and undefined both are falsy values
