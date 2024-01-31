@@ -1,0 +1,22 @@
+{
+  "name": "dsa_javascript",
+  "version": "1.0.0",
+  "description": "Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.",
+  "main": "Bugs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcodes-real/DSA_JavaScript.git"
+  },
+  "author": "AD",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arcodes-real/DSA_JavaScript/issues"
+  },
+  "homepage": "https://github.com/arcodes-real/DSA_JavaScript#readme",
+  "dependencies": {
+    "qrcode": "^1.5.3"
+  }
+}
