@@ -63,3 +63,47 @@ console.log(typeof null);
 console.log(typeof undefined);
 console.log(null === undefined);
 console.log(null == undefined); // true coz null and undefined both are falsy values
+
+// call vs bind
+
+// call
+
+function greet(message){
+    console.log(message + ", "+ this.name);
+}
+
+const bird ={
+    name: "Hen"
+};
+greet.call(bird, "Hello");
+
+// bind
+
+function greet2(message){
+    console.log(message +", "+ this.name);
+}
+
+const animal = {
+    name : "lion"
+}
+
+const objGreet2 = greet2.bind(animal);
+objGreet2("Hello");
+
+// when a new function is created with the bind method, the new function's context is permanently set to the 
+// properties of the object to which it is binded
+
+const Bird = {
+    name: "Hen"
+};
+
+const Animal = {
+    name: "lion"
+}
+
+function show(){
+    console.log(this.name);
+}
+
+const objShow = show.bind(Bird);
+objShow.call(Animal);

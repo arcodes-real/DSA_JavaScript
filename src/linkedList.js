@@ -120,6 +120,40 @@ class LinkedList{
         }
     }
 
+    // searchFromValue(value){
+    //     if(this.isEmpty()){
+    //         return -1;
+    //     }
+    //     if(this.head.value === value){
+    //         console.log('0');
+    //     }
+    //     else{
+    //         let prev = this.head;
+    //         let count = 0;
+    //         while(prev.next && prev.next.value !== value){
+    //             prev = prev.next;
+    //             count++;
+    //         }
+    //         console.log(count+1);
+    //     }
+    // }
+
+    searchFromValue(value){
+        if(this.isEmpty()){
+            return -1;
+        }
+        let curr = this.head;
+        let count = 0;
+        while(curr){
+            if(curr.value === value){
+                return count;
+            }
+            curr = curr.next;
+            count++;
+        }
+        return -1;
+    }
+
     print(){
         if(this.isEmpty()){
             console.log("List is Empty");
@@ -149,9 +183,10 @@ list.insert(50,1);
 list.insert(60,2);
 list.insert(70,2);
 
-list.removeFromValue(70);
-list.removeFromValue(80);
-list.removeFromIndex(2);
+console.log(list.searchFromValue(90));
+// list.removeFromValue(70);
+// console.log(list.removeFromValue(80));
+// list.removeFromIndex(2);
 
 list.print();
 console.log(list.isEmpty());
