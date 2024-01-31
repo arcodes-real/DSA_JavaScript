@@ -74,7 +74,7 @@ class LinkedList{
         
     }
 
-    removeFrom(index){
+    removeFromIndex(index){
         if(index < 0 || index > this.size){
             return null;
         }
@@ -93,6 +93,31 @@ class LinkedList{
         }
         this.size--;
         return removedNode.value;
+    }
+
+    removeFromValue(value){
+        if(this.isEmpty()){
+            return null;
+        }
+        if(this.head.value === value){
+            this.head.next = this.head;
+            this.size--;
+            return value;
+        }
+        else{
+            let removedNode;
+            let prev = this.head;
+            while(prev.next && prev.next.value !== value){
+                prev = prev.next;
+            }
+            if(prev.next){
+                removedNode = prev.next;
+                prev.next = removedNode.next;
+                this.size--;
+                return value;
+            }
+            console.log("value doesn't exist");
+        }
     }
 
     print(){
@@ -124,8 +149,9 @@ list.insert(50,1);
 list.insert(60,2);
 list.insert(70,2);
 
-
-// list.removeFrom(2);
+list.removeFromValue(70);
+list.removeFromValue(80);
+list.removeFromIndex(2);
 
 list.print();
 console.log(list.isEmpty());
