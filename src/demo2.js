@@ -107,3 +107,27 @@ function show(){
 
 const objShow = show.bind(Bird);
 objShow.call(Animal);
+
+// LC-2966: Divide Array into arrays with max difference
+// Divide the array into one or more arrays of size 3 satisfying the following conditions:
+// Each element of nums should be in exactly one array.
+// The difference between any two elements in one array is less than or equal to k.
+// nums is of size n, n is a multiple of 3
+// i/p: nums=[1,3,4,8,7,9,3,5,1] k = 2
+// o/p: [[1,1,3],[3,4,5],[7,8,9]]
+
+const divideArray = (nums, k)=>{
+    nums.sort((a,b) => a-b);
+
+    let result = [];
+    for(let i =2; i<nums.length; i += 3){
+        if(nums[i] - nums[i-2] > k){
+            return [];
+        }
+        result.push([nums[i-2],nums[i-1],nums[i]]);
+    }
+    return result;
+}
+
+const resArrays = divideArray([1,3,4,8,7,9,3,5,1], 2);
+console.log(resArrays);
