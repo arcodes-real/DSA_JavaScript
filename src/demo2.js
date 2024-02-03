@@ -131,3 +131,26 @@ const divideArray = (nums, k)=>{
 
 const resArrays = divideArray([1,3,4,8,7,9,3,5,1], 2);
 console.log(resArrays);
+
+
+// sequential digits
+// i/p : [100, 300]
+// o/p: [123, 234]
+// return a sorted array of such numbers whose digits are sequential and is in the range [low,high]
+
+var sequentialDigits = function(low, high){
+    let s = '1234567890';
+    let res = [];
+
+    for(let i = 0; i<s.length; i++){
+        for(let j=i+1; j<s.length; j++){
+            let num = parseInt(s.substring(i, j+1));
+
+            if(num > high) break;
+            if (num >= low) res.push(num);
+        }
+    }
+    return res.sort((a,b) => a-b);
+}
+let finalRes = sequentialDigits(1000,13000);
+console.log(finalRes);
