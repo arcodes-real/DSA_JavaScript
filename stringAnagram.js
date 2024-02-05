@@ -218,3 +218,17 @@ function removeVowelAndReverse(str){
 
 const inputString = "Hi Archisman Datta, how are you doing?";
 removeVowelAndReverse(inputString);
+
+
+
+// converting an array of objects to a single object
+
+var array = [
+    { key: 'k1', value: 'v1' },
+    { key: 'k2', value: 'v2' },
+    { key: 'k3', value: 'v3' }
+];
+
+let mappedArr = array.map((item) => ({ [item.key] : item.value }));
+let arrObj = Object.assign({}, ...mappedArr);
+console.log(arrObj);
