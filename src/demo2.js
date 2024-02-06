@@ -154,3 +154,22 @@ var sequentialDigits = function(low, high){
 }
 let finalRes = sequentialDigits(1000,13000);
 console.log(finalRes);
+
+// protypal inheritance
+
+const utility = {
+    marks: 30,
+    increment: function(){
+        this.marks++
+    },
+    decrement: function(){
+        this.marks--;
+    }
+}
+
+const obj = Object.create(utility);
+obj.name = "Archisman";
+obj.age = 23;
+obj.increment();
+obj.decrement();
+console.log(obj);
