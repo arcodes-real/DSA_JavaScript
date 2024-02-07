@@ -145,7 +145,7 @@ var sequentialDigits = function(low, high){
     for(let i = 0; i<s.length; i++){
         for(let j=i+1; j<s.length; j++){
             let num = parseInt(s.substring(i, j+1));
-
+            console.log(num);
             if(num > high) break;
             if (num >= low) res.push(num);
         }
