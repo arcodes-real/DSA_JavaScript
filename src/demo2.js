@@ -173,3 +173,27 @@ obj.age = 23;
 obj.increment();
 obj.decrement();
 console.log(obj);
+
+// object immutability - making multiple but not all object properties immutable
+
+const user = {
+    name: 'Archisman',
+    adhaar: 1234567,
+    phn: 6350089281
+};
+
+Object.defineProperties(user, {
+    name:{
+        writable: false
+    },
+    adhaar:{
+        writable: false
+    }
+});
+
+// Object.freeze(user);
+
+user.name = "nsd";
+user.adhaar = 736432;
+user.phn = 9609714365;
+console.log(user);
