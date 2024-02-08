@@ -214,3 +214,21 @@ const mapEnd = performance.now();
 console.log(`Speed [map] : ${mapEnd - mapStart} milliseconds`);
 // const opEnd = performance.now();
 // console.log(`Speed [Op] : ${opEnd - opStart} milliseconds`);
+
+// closure and lexical scoping in Javascript
+// https://www.freecodecamp.org/news/lets-learn-javascript-closures-66feb44f6a44/
+var x = 10;
+
+function outer(){
+    var a = 20;
+    function inner(){
+        var b = 30;
+        console.log(x+a+b);
+    }
+    inner();
+    a++;
+    console.log(a);
+}
+outer();
+
+// output: 60 21
