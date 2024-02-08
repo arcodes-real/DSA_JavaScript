@@ -197,3 +197,20 @@ user.name = "nsd";
 user.adhaar = 736432;
 user.phn = 9609714365;
 console.log(user);
+
+// .map() vs .forEach() perf/speed check
+
+const ARR = [1,2,3,4,5];
+
+// const opStart = performance.now();
+const forEachStart = performance.now();
+ARR.forEach((ele) => (ele+ele)*100000);
+const forEachEnd = performance.now();
+console.log(`Speed [forEach] : ${forEachEnd - forEachStart} milliseconds`);
+
+const mapStart = performance.now();
+ARR.map((ele) => (ele+ele)*100000);
+const mapEnd = performance.now();
+console.log(`Speed [map] : ${mapEnd - mapStart} milliseconds`);
+// const opEnd = performance.now();
+// console.log(`Speed [Op] : ${opEnd - opStart} milliseconds`);
