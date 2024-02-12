@@ -232,3 +232,13 @@ function outer(){
 outer();
 
 // output: 60 21
+
+// converting a nested array to 1-D array -flat()
+// flat() returns a new array
+// o/p - [1,2,3,4,5,6,7,8]
+
+var arrToConvert = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
+
+const cA = (arrToConvert.flat(4));
+console.log(cA);
+console.log(cA === arrToConvert);
