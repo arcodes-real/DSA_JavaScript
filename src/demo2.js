@@ -242,3 +242,14 @@ var arrToConvert = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
 const cA = (arrToConvert.flat(4));
 console.log(cA);
 console.log(cA === arrToConvert);
+
+// APPLYING flat() on non-array objects
+
+const arrayLike = {
+    length : 3,
+    0: [1,2],
+    1: {length:2, 0:1, 1:2},
+    2: 5,
+    3: 3
+}
+console.log(Array.prototype.flat.call(arrayLike));
