@@ -253,3 +253,15 @@ const arrayLike = {
     3: 3
 }
 console.log(Array.prototype.flat.call(arrayLike));
+
+// higher order function
+
+function randomNumGen(){
+    return Math.floor(Math.random() * 1000);
+}
+
+function idGen(name, rand){
+    return name +"-"+ rand;
+}
+const userId = idGen("Archis", randomNumGen());
+console.log(userId);
