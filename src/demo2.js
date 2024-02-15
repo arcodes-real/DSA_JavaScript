@@ -265,3 +265,14 @@ function idGen(name, rand){
 }
 const userId = idGen("Archis", randomNumGen());
 console.log(userId);
+
+// function
+
+function left(){
+    console.log("Left");
+}
+function right(){
+    console.log("Right");
+}
+
+left() || right();
