@@ -42,7 +42,7 @@ if(url1 === url2){
 
 
 const array = [1,2,3,4,5,6,7,8,9];
-console.log(array.slice(1));
+console.log(array.slice(1,4));
 // console.log(array.slice(-3).join(":"));
 
 //         const currentDate =  new Date();
@@ -159,3 +159,16 @@ console.log(result);
 
 
 
+
+// function hoisting concept
+
+
+sum(10,20);
+// diff(20, 30);
+function sum(a,b){
+    console.log(a+b);
+}
+
+// const diff = (a,b)=>{
+//     return a - b;
+// }

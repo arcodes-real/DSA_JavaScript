@@ -276,3 +276,17 @@ function right(){
 }
 
 left() || right();
+
+
+
+// creating my custom push
+
+Array.prototype.myPush = function(...elements){
+    for(let element of elements){
+        this[this.length] = element;
+    }
+    return this.length;
+};
+const A = [1,2,3];
+A.myPush(4,5,6);
+console.log(A);
