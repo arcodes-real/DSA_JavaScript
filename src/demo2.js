@@ -290,3 +290,23 @@ Array.prototype.myPush = function(...elements){
 const A = [1,2,3];
 A.myPush(4,5,6);
 console.log(A);
+
+// Given an integer n, return true if it is a power of two. Otherwise, return false.
+// An integer n is a power of two, if there exists an integer x such that n == 2x.
+
+function isPowerOfTwo(n){
+    if( n === 0 ) return false;
+
+    while(n > 0){
+        if( n === 1 ) return true;
+        if( n % 2 !== 0) break;
+        n /= 2;
+    }
+    return false;
+}
+
+const isRes = isPowerOfTwo(32);
+console.log(isRes);
+
+
+
