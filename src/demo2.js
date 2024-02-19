@@ -309,4 +309,18 @@ const isRes = isPowerOfTwo(32);
 console.log(isRes);
 
 
+// CUSTOM LAST()
 
+Array.prototype.last = function(){
+    // if(this.length === 0){
+    //     return -1;
+    // }else{
+    //     return this[this.length-1];
+    // }
+
+    return this.length===0? -1: this[this.length - 1];
+    
+}
+
+const AR = [1,2,3,5,6];
+console.log(AR.last());
