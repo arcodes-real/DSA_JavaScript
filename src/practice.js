@@ -1,28 +1,21 @@
-//custom push
+// sequential digits
+// i/p : [100, 300]
+// o/p: [123, 234]
 
-Array.prototype.myPush = function(...elements){
-    for(let element of elements){
-        this[this.length] = element
+function sequential(low, high){
+    let s = '123456789'
+    let res = [];
+
+    for(let i = 0; i<s.length; i++){
+        for(let j = i+1; j<s.length; j++){
+            let num = parseInt(s.substring(i, j+1));
+            console.log(num);
+            if(num > high) break;
+            if( num >= low) res.push(num);
+        }
     }
-    return this.length;
-};
-
-const arr = [1,2,3];
-arr.myPush(4,5,6);
-console.log(arr);
-
-// CUSTOM LAST()
-
-Array.prototype.last = function(){
-    // if(this.length === 0){
-    //     return -1;
-    // }else{
-    //     return this[this.length-1];
-    // }
-
-    return this.length===0? -1: this[this.length - 1];
-    
+    return res.sort((a,b) => a-b);
 }
 
-const A = [1,2,3,5,6];
-console.log(A.last());
+const range = sequential(10,20);
+console.log(range);
