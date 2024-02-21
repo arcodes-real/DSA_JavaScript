@@ -324,3 +324,17 @@ Array.prototype.last = function(){
 
 const AR = [1,2,3,5,6];
 console.log(AR.last());
+
+// closures in javascript
+
+function displayCandy(){
+    let candy = ["jellybeans"];
+    
+    function addCandy(candyName){
+        candy.push(candyName)
+    }
+
+    addCandy("gumdrops")
+    console.log(candy)
+}
+displayCandy();
