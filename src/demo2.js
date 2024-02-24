@@ -338,3 +338,44 @@ function displayCandy(){
     console.log(candy)
 }
 displayCandy();
+
+// function concept
+function sayHello(){
+    return true
+}
+
+if(sayHello()){console.log("Success")} 
+else {console.log("Fail")}
+
+// bind
+
+const bikeDetails = {
+    displayDetails : function(registrationNum, brandName){
+        return this.name +","+ "Bike details : "+  registrationNum + brandName
+    }
+}
+
+const customer1 = {
+    name : "Archisman"
+}
+
+const customer1Bike = bikeDetails.displayDetails.bind(customer1, "KA010011", "Haya Busa");
+console.log(customer1Bike())
+
+// creating a custom Array.prototype.filter()
+
+Array.prototype.myFilter = function(fn){
+    let filtered = [];
+
+    for(let i = 0; i < this.length; i++){
+        if(fn(this[i])){
+            filtered.push(this[i]);
+        }
+    }
+    return filtered
+}
+
+const toBeFilterArray = [10,20,30];
+const filterArray = toBeFilterArray.myFilter((num) => {return num > 10});
+console.log(filterArray);
+
