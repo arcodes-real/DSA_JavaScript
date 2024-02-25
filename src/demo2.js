@@ -379,3 +379,26 @@ const toBeFilterArray = [10,20,30];
 const filterArray = toBeFilterArray.myFilter((num,index) => {return (num > 10 && index > 0)});
 console.log(filterArray);
 
+// method chaining
+
+const myObj = {
+    value : 0,
+
+    increment : function(){
+        this.value++;
+        return this
+    },
+
+    double : function(){
+        this.value *= 2;
+        return this
+    },
+
+    getValue : function(){
+        return this.value
+    }
+}
+
+const res = myObj.increment().double().double().getValue();
+console.log(res)
+
