@@ -402,3 +402,21 @@ const myObj = {
 const res = myObj.increment().double().double().getValue();
 console.log(res)
 
+// difference between call() and apply()
+
+const person ={
+    bioData : function(city, country){
+        console.log(this.firstName +" "+ this.lastName +","+ city +","+ country) 
+    }
+}
+const person1 = {
+    firstName : "Archisman",
+    lastName : "Datta"
+}
+
+// incase of apply()
+person.bioData.apply(person1, ["Chennai", "India"]);
+
+// incase of call()
+
+person.bioData.call(person1, "Chennai", "India");

@@ -1,21 +1,19 @@
-Array.prototype.myPush = function(...elements){
-    for(let element of elements){
-        this[this.length] = element
-    }
-    return this.length;
+// const fib = (n) =>{
+//     if(n <= 1) return 1
+//     return fib(n-1) + fib(n-2)
+// }
+
+// const res = fib(5)
+// console.log(res)
+
+const fib = (n, memo) => {
+    memo = memo || {}
+
+    if (memo[n]) return memo[n]
+
+    if (n <= 1) return 1
+    return memo[n] = fib(n-1, memo) + fib(n-2, memo)
 }
 
-Array.prototype.myFilter = function(fn){
-    let filtered = [];
-
-    for(let i = 0; i<this.length; i++){
-        if(fn(this[i],i)){
-            filtered.push(this[i])
-        }
-    }
-    return filtered
-}
-
-const arr = [1,2,3,4];
-const filteredArr = arr.myFilter((num,index) => {return index === 1})
-console.log(filteredArr)
+const res = fib(9)
+console.log(res)
