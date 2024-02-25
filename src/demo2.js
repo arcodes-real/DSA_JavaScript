@@ -368,7 +368,7 @@ Array.prototype.myFilter = function(fn){
     let filtered = [];
 
     for(let i = 0; i < this.length; i++){
-        if(fn(this[i])){
+        if(fn(this[i],i)){
             filtered.push(this[i]);
         }
     }
@@ -376,6 +376,6 @@ Array.prototype.myFilter = function(fn){
 }
 
 const toBeFilterArray = [10,20,30];
-const filterArray = toBeFilterArray.myFilter((num) => {return num > 10});
+const filterArray = toBeFilterArray.myFilter((num,index) => {return (num > 10 && index > 0)});
 console.log(filterArray);
 

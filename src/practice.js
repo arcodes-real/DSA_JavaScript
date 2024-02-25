@@ -1,25 +1,21 @@
-// var filtered = function(arr, fn){
-
-// }
-
-// function filter(arr){
-//     const fa = arr.filter((num) => {return num > 10} )
-//     console.log(fa)
-// }
-
-// filter([10,20,20])
+Array.prototype.myPush = function(...elements){
+    for(let element of elements){
+        this[this.length] = element
+    }
+    return this.length;
+}
 
 Array.prototype.myFilter = function(fn){
     let filtered = [];
 
-    for(let i =0; i<this.length; i++){
-        if(fn(this[i])){
+    for(let i = 0; i<this.length; i++){
+        if(fn(this[i],i)){
             filtered.push(this[i])
         }
     }
-    return filtered;
+    return filtered
 }
 
-const arr = [10,20,30];
-const res = arr.myFilter((num) => { return num > 10 });
-console.log(res)
+const arr = [1,2,3,4];
+const filteredArr = arr.myFilter((num,index) => {return index === 1})
+console.log(filteredArr)
