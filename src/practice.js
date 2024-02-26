@@ -1,15 +1,3 @@
-const fetchData = () =>{
-    fetch("https://jsonplaceholder.typicode.com/todos")
-    .then((response) => {
-        let dumData = response.json()
-        console.log(dumData)
-    })
-    .catch((err) =>{
-        console.log("Error:", err)
-    })
-}
-
-fetchData();
 
 
 

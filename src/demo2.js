@@ -432,3 +432,14 @@ const fetchData = () =>{
     })
 }
 
+//IIFE
+
+let a = 10;
+
+(function(){
+    let a = 20;
+    console.log(a)
+})();
+
+console.log(a);
+
