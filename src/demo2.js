@@ -420,3 +420,15 @@ person.bioData.apply(person1, ["Chennai", "India"]);
 // incase of call()
 
 person.bioData.call(person1, "Chennai", "India");
+
+// fetchData
+
+const fetchData = () =>{
+    fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((response) => response.json())
+    .then((data) => {data.map((item) => console.log(item.title))})
+    .catch((err) =>{
+        console.log("Error:", err)
+    })
+}
+
