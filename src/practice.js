@@ -1,3 +1,8 @@
+// let sum = a => b => (typeof b === "undefined"? a: sum(a+b));
+// console.log(sum(2)());
+// console.log(sum(2)(3));
+// console.log(sum(2)());
+
 
 
 

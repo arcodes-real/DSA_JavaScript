@@ -431,9 +431,12 @@ const fetchData = () =>{
         console.log("Error:", err)
     })
 }
-
+// fetchData();
 //IIFE
-
+// Encapsulation. IIFE provides encapsulation, allowing you to create private scopes for variables and functions. ...
+// Avoiding Global Pollution. By encapsulating code within IIFE, you avoid polluting the global namespace. ...
+// Immediate Execution. IIFE executes code immediately after declaration. ...
+// Data Privacy.
 let a = 10;
 
 (function(){
@@ -443,3 +446,19 @@ let a = 10;
 
 console.log(a);
 
+// currying
+
+function multiply(a,b){
+    return a*b
+}
+
+function currying(fn){
+    return function(a){
+        return function(b){
+            return fn(a,b)
+        }
+    }
+}
+
+const curriedFunc = currying(multiply);
+console.log(curriedFunc(2)(3))

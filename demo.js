@@ -620,3 +620,15 @@ for(let i = 0; i<arry2.length; i++){
 }
 console.log(arry1.sort(function(a,b){return a-b}));
 
+function manipulateArr(arr){
+    arr.push(5);
+    arr = [1]
+    return arr
+}
+
+let list  = [1,2,3,4];
+manipulateArr(list);
+console.log(list);
+
+list = manipulateArr(list)
+console.log(list)
