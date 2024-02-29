@@ -462,3 +462,20 @@ function currying(fn){
 
 const curriedFunc = currying(multiply);
 console.log(curriedFunc(2)(3))
+
+//how to not execute the other operations inside a function, if the 'if' block runs
+
+function check(){
+    let name =""
+    let email =""
+    if(name === "" || email === ""){
+        console.log("required")
+        return
+    }
+    console.log("All Set!")
+}
+check()
+
+// to prevent a function from running all other operations, if the 'if block' runs, we can use a
+// return statement within the 'if block', this will exit the function early if the condition is met
+
