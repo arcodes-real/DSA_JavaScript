@@ -479,3 +479,16 @@ check()
 // to prevent a function from running all other operations, if the 'if block' runs, we can use a
 // return statement within the 'if block', this will exit the function early if the condition is met
 
+// reverse "ABCD EFGH" to "DCBA HGFE"
+
+function revInSameOrder(str){
+    let rev  = "";
+    for(let i = str.length-1; i>=0; i--){
+        rev += str[i]
+    }
+    return rev
+}
+const input = "ABCD EFGH"
+const revres = revInSameOrder(input);
+const final = revres.slice(5)+" "+revres.slice(0,4);
+console.log(final)
