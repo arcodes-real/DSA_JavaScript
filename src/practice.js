@@ -1,28 +1,32 @@
-// "ABCD EFGH" -> "DCBA HGFE"
-
-function revString(str){
-    let rev = ""
-    for(let i = str.length-1; i>=0; i--){
-        rev += str[i]
-       
-    }
-    return rev
+// function fizzBuzz(n) {
+//     // Write your code here
     
-}
+//     for(let i = 1; i<=n; i++){
+//         if(i%3 === 0 && i%5 === 0){
+//             console.log("FizzBuzz")
+//         }
+//         else if(i % 3 === 0){
+//             console.log("Fizz")
+//         }
+//         else if(i%5 === 0){
+//             console.log("Buzz")
+//         }
+//         else{
+//            console.log(i)
+//         }
+//     }
+    
 
-let input = "ABCD EFGH"
-let reversed = revString(input);
-let final = reversed.slice(5)+" "+reversed.slice(0,4);
-console.log(final);
+// }
+// const res = fizzBuzz(15);
+// console.log(res)
+
+// let x = 1;
+// for(let i = 1; i<=128; i+=i){
+//     x += x
+// }
+// console.log(x);
 
 
-function check(){
-    let name = "";
-    let email = ""
-    if(name === "" || email === ""){
-        console.log("required")
-        return
-    }
-    console.log("all done")
-}
-check();
+
+

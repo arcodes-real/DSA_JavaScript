@@ -492,3 +492,48 @@ const input = "ABCD EFGH"
 const revres = revInSameOrder(input);
 const final = revres.slice(5)+" "+revres.slice(0,4);
 console.log(final)
+
+// REST API: Capital City
+// https://jsonmock.hackerrank.com/api/countries?name=${country}
+async function getCapitalCity(country){
+    await fetch(`https://jsonmock.hackerrank.com/api/countries?name=${country}`)
+    .then((response) => response.json())
+    .then((data) => {
+        if(data.data.length === 0){
+            console.log("No data available")
+        }
+        else{
+            data.data.map((item) => console.log(item.capital))
+        }
+    })
+    .catch((err) =>{
+        console.log("Error", err)
+    })
+}
+getCapitalCity("Portugal")
+
+// Diverse Deputation
+function binomialCoefficient(n, k) {
+    // Calculate binomial coefficient (n choose k)
+    let res = 1;
+    for (let i = 0; i < k; i++) {
+        res *= (n - i);
+        res /= (i + 1);
+    }
+    return res;
+}
+
+function diverseDeputation(m, w) {
+    // Calculate the number of ways to select 2 men out of m and 1 woman out of w
+    let menWays = binomialCoefficient(m, 2) * w;
+    // Calculate the number of ways to select 2 women out of w and 1 man out of m
+    let womenWays = binomialCoefficient(w, 2) * m;
+    
+    // Return the total number of diverse deputations
+    return menWays + womenWays;
+}
+
+// Example usage:
+const m = 3;
+const w = 9;
+console.log(diverseDeputation(m, w)); // Output: 135
