@@ -537,3 +537,10 @@ function diverseDeputation(m, w) {
 const m = 3;
 const w = 9;
 console.log(diverseDeputation(m, w)); // Output: 135
+
+// primitive data types in JS are immutable, Non primitive are mutable
+let string = "hello"
+string.length = 10
+console.log(string.length)
+console.log(string)
+// o/p : 5 hello

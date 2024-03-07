@@ -16,7 +16,16 @@
 
 // const p3 = Promise.all([1, 2, 3, Promise.reject(555)]).catch(err => console.log(err));
 
-const resolvedPromiseArray = [Promise.resolve(33), Promise.resolve(44)];
+// const resolvedPromiseArray = [Promise.resolve(33), Promise.resolve(44)];
 
- const p = Promise.all(resolvedPromiseArray);
-console.log(p);
+//  const p = Promise.all(resolvedPromiseArray);
+// console.log(p);
+
+const user1 = {
+    username : "test",
+    followers : 0
+}
+
+const user2 = user1;
+user2.followers = ++user1.followers
+console.log(user2)

@@ -28,5 +28,15 @@
 // console.log(x);
 
 
+// function reverse(str){
+//     let revStr = "";
+//     for(let i = str.length-1; i>=0; i--){
+//         revStr += str[i]
+//     }
+//     return revStr
+// }
+// const input = reverse("ABCD EFGH");
+// const finalRev = input.slice(5)+" "+input.slice(0,4);
+// console.log(finalRev)
 
 
