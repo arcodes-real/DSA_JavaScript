@@ -544,3 +544,96 @@ string.length = 10
 console.log(string.length)
 console.log(string)
 // o/p : 5 hello
+
+
+// when accessing variables inside a function, JavaScript follows a mechanism called variable scope resolution, which involves traversing the scope chain to find the value of variables. When a variable is not found in the current scope, JavaScript looks for it in the outer scope, and so on, until it reaches the global scope (window object in the case of browsers).
+
+// In your example, c is declared in the global scope, outside the outer function. When outer is called, and it tries to access the value of c, JavaScript looks for c in the outer scope of the outer function. Since c is not declared within outer, JavaScript continues to look for it in the next outer scope, which is the global scope. Therefore, it can access the value of c from the global scope.
+
+// This behavior is not affected by the context (this) in which the function is called because variable resolution happens based on lexical scope (where variables are declared in the code) rather than the runtime context (this).
+
+let c = 30;
+function outer(){
+    let a  = 10;
+    console.log(a, this.b, c);
+}
+const objRef = {
+    b : 20
+};
+outer.call(obj)
+// o/p : 10 20 30
+
+
+// 1) the password must be 8 or more characters long
+// 2) it must contain characters from all categories : uppercase, lowercase, digits and special characters
+// 3) it must contain no more than 20% of special characters
+// 4) it cannot contain spaces, periods or commas
+// 5) it cannot contain 3 or more sequential characters
+
+function passwordValidator(password){
+
+    // check for length
+    if(password.length < 8){
+        return false
+    }
+    // check for 3 or more sequential characters
+    // check for spaces, periods and commas
+    for(let j = 0; j<password.length; j++){
+        let char = password[j]
+
+        if((char === ',') || (char === '.') || (char === ' ')){
+            return false;
+        }
+    }
+
+    // check for uppercase, lowercase, digits and special character
+
+        // regular expressions to check for upper and lower case
+        // const upperCaseRegex = /[A-Z]/;
+        // const lowerCaseRegex = /[a-z]/;
+        // return upperCaseRegex.test(password) && lowerCaseRegex.test(password)
+
+        let hasUpperCase = false;
+        let hasLowerCase = false;
+        let hasDigits = false;
+        let SpecialChar = 0;
+        for(let i = 0; i<password.length; i++){
+            let char = password[i]
+
+            if(char >= 'A' && char <= 'Z'){
+                hasUpperCase =true
+            }
+            else if(char >= 'a' && char <= 'z'){
+                hasLowerCase = true
+            }
+            else if(!isNaN(parseInt(char))){
+                hasDigits = true;
+            }
+            else{
+                SpecialChar++
+            }
+        }
+        // make sure pwd doesn't contain more than 20% of special characters
+            console.log(SpecialChar)
+           let totalCount = password.length;
+           console.log(totalCount)
+           let specialCharPercentage = (SpecialChar/totalCount)*100
+           console.log(specialCharPercentage)
+
+        // check if 3 or more characters are not sequential
+            for(let l = 0; l <password.length-2; l++){
+                if((password.charCodeAt(l)+1 === password.charCodeAt(l+1)) &&
+                    (password.charCodeAt(l+1)+1 === password.charCodeAt(l+2))){
+                        return false
+                    }
+            }
+
+           if(hasUpperCase && hasLowerCase && hasDigits && specialCharPercentage <= 20){
+            return true;
+        }else{
+            return false;
+        }
+
+        
+}
+console.log(passwordValidator("Password@2"));

@@ -39,4 +39,13 @@
 // const finalRev = input.slice(5)+" "+input.slice(0,4);
 // console.log(finalRev)
 
+// async function getWeather(city){
+//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=f5cb74925f27a069b7a88525d31f7256`)
+//     .then((response) => response.json())
+//     .then((data) => console.log(data))
+//     .catch((err) =>{
+//         console.log(err)
+//     })
+// }
+// getWeather("alipurduar");
 
