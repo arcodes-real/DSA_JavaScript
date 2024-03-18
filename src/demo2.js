@@ -552,15 +552,15 @@ console.log(string)
 
 // This behavior is not affected by the context (this) in which the function is called because variable resolution happens based on lexical scope (where variables are declared in the code) rather than the runtime context (this).
 
-let c = 30;
-function outer(){
+let cc = 30;
+function outerr(){
     let a  = 10;
-    console.log(a, this.b, c);
+    console.log(a, this.b, cc);
 }
-const objRef = {
+const objRef = {  
     b : 20
 };
-outer.call(obj)
+outerr.call(objRef)
 // o/p : 10 20 30
 
 
@@ -637,3 +637,17 @@ function passwordValidator(password){
         
 }
 console.log(passwordValidator("Password@2"));
+
+// writing a custom method using object prototype called satisfies, which would return true if 
+// a particular string property exists in an object
+
+Object.prototype.satisfies = function(property){
+    return typeof this === 'object' && this !== null && typeof property === 'string' && this.hasOwnProperty(property)
+}
+
+const testCase = {
+    name : "archis",
+    age : 23
+}
+testCase.satisfies("age")
+
