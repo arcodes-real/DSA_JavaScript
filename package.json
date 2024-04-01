@@ -18,5 +18,8 @@
   "homepage": "https://github.com/arcodes-real/DSA_JavaScript#readme",
   "dependencies": {
     "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "stylelint-config-standard-scss": "^13.0.0"
   }
 }

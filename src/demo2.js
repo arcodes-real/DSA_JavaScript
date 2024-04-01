@@ -651,3 +651,71 @@ const testCase = {
 }
 testCase.satisfies("age")
 
+
+//find the longest word in a sentence
+
+function findLongestWord(sentence){
+    let wordsArr = sentence.split(" ")
+    let longestWord = ""
+
+    for(let i=0; i<wordsArr.length; i++){
+        if(wordsArr[i].length > longestWord.length){
+            longestWord = wordsArr[i]
+        }
+    }
+    return longestWord
+}
+
+console.log(findLongestWord("I am Archisman Datta"))
+
+// if a promise returns a reject, in that case obviously the catch block will be executed, but 
+// if with that catch block any then block is chained, that too will get executed
+
+function job(){
+    return new Promise(function (resolve, reject){
+        reject()
+    })
+}
+
+const promise = job();
+
+promise.then(function(){
+    console.log('Success 1')
+}).then(function(){
+    console.log('Success 2')
+}).then(function(){
+    console.log('Success 3')
+}).catch(function(){
+    console.log('Error 1')
+}).then(function(){
+    console.log('Success 4')
+})
+
+//o/p : Error 1
+    //  Success 4
+
+// Create a function which will accepts two arrays arr1 and arr2. The function should return true if every value in arr1 has its corresponding value squared in array2. The frequency of values must be same
+function isSameFreq(arr1, arr2){
+    if(arr1.length !== arr2.length) {
+        return false
+    }
+
+    let arrfreq1 = {};
+    let arrfreq2 = {};
+
+    for(let num of arr1){
+        arrfreq1[num] = (arrfreq1[num] || 0) + 1
+        }
+    // console.log(arrfreq1)
+    for(let num of arr2){
+        arrfreq2[num] = (arrfreq2[num] || 0) + 1
+        }
+    // console.log(arrfreq2)
+
+    for(let key in arrfreq1){
+        if(!key*key in arrfreq2) return false;
+        if(arrfreq1[key] !== arrfreq2[key*key]) return false
+    }
+    return true
+}
+console.log(isSameFreq([1,2,2],[1,4,4]))
