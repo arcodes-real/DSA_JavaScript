@@ -743,3 +743,19 @@ String.prototype.reverse = function(){
     return reversed
 }
 console.log("hello world".reverse()) // o/p: dlrow olleh
+
+// reversing a string will keeping the words in same order
+
+function reverseStr(str){
+    let reversed = "";
+    let finalReversed = ""
+    for(let i = str.length-1; i>=0; i--){
+        reversed += str[i]
+    }
+    let splitRev = reversed.split(" ")
+    for(let i = splitRev.length-1; i>=0; i--){
+        finalReversed += splitRev[i]+" "
+    }
+    return finalReversed
+}
+console.log(reverseStr("hello world India Archis"))
