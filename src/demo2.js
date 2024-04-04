@@ -719,3 +719,27 @@ function isSameFreq(arr1, arr2){
     return true
 }
 console.log(isSameFreq([1,2,2],[1,4,4]))
+
+// polyfill for array.protoype.reduce() method
+
+Array.prototype.myReduce = function(callback, initialValue){
+    let accumulator = initialValue;
+    for(let i = 0; i < this.length; i++){
+        accumulator = callback(accumulator, this[i])
+    }
+    return accumulator
+}
+const arr = [1,2,3,4,5]
+let sum = arr.myReduce((acc, curr) => acc+curr,0)
+console.log(sum)
+
+// polyfill for String.prototype.reverse()
+
+String.prototype.reverse = function(){
+    let reversed = ""
+    for(let i = this.length-1; i>=0; i--){
+        reversed += this[i]
+    }
+    return reversed
+}
+console.log("hello world".reverse()) // o/p: dlrow olleh

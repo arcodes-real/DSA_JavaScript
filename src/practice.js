@@ -1,23 +1,24 @@
-// var a = 1;
-// function data(){
-//     if(!a){
-//         var a =10;
+// reverse polyfill
+
+// function reverseStr(str){
+//     let reversed = "";
+//     for(let i = str.length-1; i>=0; i--){
+//         reversed += str[i]
 //     }
-//     console.log(a);
+//     return reversed
 // }
-// data();
-// console.log(a);
+// console.log(reverseStr("hello world"))
 
-const user = {
-    department :{
-        address :{
-            country : "India"
-        }
-    }
-}
+// String.prototype.myReverse = function(){
+//     // const letters = this.split('')
+//     let reversed = ""
+//     for(let i = this.length-1; i>=0; i--){
+//         reversed += this[i]
+//     }
+//     return reversed
+// }
+// console.log("hello world".myReverse());
 
-// const {department : {address :{country:country}}} = user
-// console.log(country)
-
-const country = user?.department?.address?.country;
-console.log(country)
+for(let i = 0; i<5; i++){
+    setTimeout(function(){
+        console.log(i)},0)}
